@@ -21,7 +21,7 @@
         "mews/purifier": "^3.3",
         "mollie/laravel-mollie": "^2.21",
         "nwidart/laravel-modules": "^9.0",
-        "paypal/rest-api-sdk-php": "*",
+        // "paypal/rest-api-sdk-php": "*",
         "pusher/pusher-php-server": "^7.2",
         "razorpay/razorpay": "^2.8",
         "srmklive/paypal": "*",
