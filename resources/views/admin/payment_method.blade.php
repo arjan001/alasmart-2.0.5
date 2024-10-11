@@ -24,6 +24,10 @@
                                     <ul class="nav nav-pills flex-column" id="myTab4" role="tablist">
 
 
+                                        {{-- <li class="nav-item border rounded mb-1">
+                                            <a class="nav-link active" id="Mpesa-tab" data-toggle="tab" href="#MpesaTab" role="tab" aria-controls="paypalTab" aria-selected="true">{{__('admin.Mpesa')}}</a>
+                                        </li>
+                                         --}}
                                         <li class="nav-item border rounded mb-1">
                                             <a class="nav-link active" id="paypal-tab" data-toggle="tab" href="#paypalTab" role="tab" aria-controls="paypalTab" aria-selected="true">{{__('admin.Paypal')}}</a>
                                         </li>
@@ -68,6 +72,74 @@
                                     <div class="border rounded">
                                         <div class="tab-content no-padding" id="settingsContent">
 
+{{-- Mpesa tab starts here --}}
+                                            {{-- <div class="tab-pane fade show active" id="MpesaTab" role="tabpanel" aria-labelledby="Mpesa-tab">
+                                                <div class="card m-0">
+                                                    <div class="card-body">
+                                                        <form action="{{ route('admin.update-paypal') }}" method="POST" enctype="multipart/form-data">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Paypal Status')}}</label>
+                                                                <div>
+                                                                    @if ($paypal->status == 1)
+                                                                        <input id="status_toggle" type="checkbox" checked data-toggle="toggle" data-on="{{__('admin.Enable')}}" data-off="{{__('admin.Disable')}}" data-onstyle="success" data-offstyle="danger" name="status">
+                                                                        @else
+                                                                        <input id="status_toggle" type="checkbox" data-toggle="toggle" data-on="{{__('admin.Enable')}}" data-off="{{__('admin.Disable')}}" data-onstyle="success" data-offstyle="danger" name="status">
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Account Mode')}}</label>
+                                                                <select name="account_mode" id="account_mode" class="form-control">
+                                                                    <option {{ $paypal->account_mode == 'live' ? 'selected' : '' }} value="live">{{__('admin.Live')}}</option>
+                                                                    <option {{ $paypal->account_mode == 'sandbox' ? 'selected' : '' }} value="sandbox">{{__('admin.Sandbox')}}</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{ __('admin.Currency Name')}}</label>
+                                                                <select name="currency_name" id="" class="form-control select2">
+                                                                    <option value="">{{__('admin.Select Currency')}}
+                                                                  </option>
+                                                                  @foreach ($currencies as $currency)
+                                                                  <option {{ $paypal->currency_id == $currency->id ? 'selected' : '' }} value="{{ $currency->id }}">{{ $currency->currency_name }}
+                                                                  </option>
+                                                                  @endforeach
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Paypal Client Id')}}</label>
+                                                                <input type="text" class="form-control" name="paypal_client_id" value="{{ $paypal->client_id }}">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Paypal Secret Key')}}</label>
+                                                                <input type="text" class="form-control" name="paypal_secret_key" value="{{ $paypal->secret_id }}">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Existing Image')}}</label>
+                                                                <div>
+                                                                    <img src="{{ asset($paypal->image) }}" alt="" class="w_200">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">{{__('admin.Existing Image')}}</label>
+                                                                <input type="file" name="image" class="form-control-file">
+                                                            </div>
+
+                                                            <button class="btn btn-primary">{{__('admin.Update')}}</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
+{{-- Mpesa tab ends here --}}
+
+{{-- paypal tab starts here --}}
                                             <div class="tab-pane fade show active" id="paypalTab" role="tabpanel" aria-labelledby="paypal-tab">
                                                 <div class="card m-0">
                                                     <div class="card-body">
@@ -132,6 +204,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+{{-- paypal tab ends here --}}
 
                                             <div class="tab-pane fade" id="stripeTab" role="tabpanel" aria-labelledby="stripe-tab">
                                                 <div class="card m-0">
